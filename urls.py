@@ -7,5 +7,6 @@ urlpatterns = [
 #    path('admin/', admin.site.urls),
     path('', views.index, name='index'),
     path('upload/', views.UploadFile, name='UploadFile'),
+    path('modify/', views.ChooseModifyFile, name='ChooseModifyFile'),
 ]
 

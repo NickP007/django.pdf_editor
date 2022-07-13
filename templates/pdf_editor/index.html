@@ -1,11 +1,6 @@
 {% extends "pdf_editor/base.html" %}
 {% load i18n static %}
 {% block title %}PDF_editor page{% endblock %}
-{% block pretitle %}{% if messages %}
-<ul class="messagelist">{% for message in messages %}
-    <li{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
-{% endfor %}</ul>
-{% endif %}{% endblock %}
 {% block content_title %}{% endblock %}
 {% block content %}<h2>Hello world!</h2>
 <a href="{% url 'pdf_editor:UploadFile' %}">{% trans 'Upload PDF file' %}</a>{% endblock %}

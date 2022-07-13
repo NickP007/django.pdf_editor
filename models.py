@@ -13,3 +13,19 @@ class PdfEditorModel(models.Model):
     # with their title name
     def __str__(self):
         return self.title
+
+
+class PdfChooseModifyModel(models.Model):
+    # id = models.AutoField()
+    PD_OPTION_01 = 'CP'
+    PD_OPTION_02 = 'JE'
+    PAGE_DUPLICATE_OPTION_CHOISES = [
+        (PD_OPTION_01, 'Collate Pages'),
+        (PD_OPTION_02, 'Join to End'),
+    ]
+    pages_to_duplicate = models.CharField(max_length=100)
+    pages_duplicate_copies = models.IntegerField(default=1)
+    pages_duplicate_option = models.CharField(max_length=2, choices=PAGE_DUPLICATE_OPTION_CHOISES, default=PD_OPTION_01)
+
+    def __str__(self):
+        return str(self.PagesDuplicateOption)

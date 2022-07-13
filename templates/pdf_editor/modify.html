@@ -1,8 +1,8 @@
 {% extends "pdf_editor/base.html" %}
 {% load i18n static %}
-{% block title %}PDF file upload page{% endblock %}
+{% block title %}PDF modify options page{% endblock %}
 {% block content %}
-    <form method='post' enctype="multipart/form-data">
+    <form method='post'>
         {% csrf_token %}
         <table>{{form.as_table}}</table>
         <input type="submit" value="Submit">
