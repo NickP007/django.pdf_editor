@@ -8,5 +8,5 @@ urlpatterns = [
     path('', views.index, name='index'),
     path('upload/', views.UploadFile, name='UploadFile'),
     path('modify/', views.ChooseModifyFile, name='ChooseModifyFile'),
+    path('download/', views.DownloadFile, name='DownloadFile'),
 ]
-

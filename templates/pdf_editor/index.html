@@ -4,3 +4,4 @@
 {% block content_title %}{% endblock %}
 {% block content %}<h2>Hello world!</h2>
 <a href="{% url 'pdf_editor:UploadFile' %}">{% trans 'Upload PDF file' %}</a>{% endblock %}
+{% if download_filename %}{% block download %}{% include "pdf_editor/download.html" %}{% endblock %}{% endif %}

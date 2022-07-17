@@ -14,6 +14,10 @@ class PdfEditorModel(models.Model):
     def __str__(self):
         return self.title
 
+    @property
+    def get_id(self):
+        return self.id
+
 
 class PdfChooseModifyModel(models.Model):
     # id = models.AutoField()
@@ -24,8 +28,8 @@ class PdfChooseModifyModel(models.Model):
         (PD_OPTION_02, 'Join to End'),
     ]
     pages_to_duplicate = models.CharField(max_length=100)
-    pages_duplicate_copies = models.IntegerField(default=1)
-    pages_duplicate_option = models.CharField(max_length=2, choices=PAGE_DUPLICATE_OPTION_CHOISES, default=PD_OPTION_01)
+    duplicate_copies = models.IntegerField(default=1)
+    duplicate_option = models.CharField(max_length=2, choices=PAGE_DUPLICATE_OPTION_CHOISES, default=PD_OPTION_01)
 
     def __str__(self):
-        return str(self.PagesDuplicateOption)
+        return str(self.duplicate_option)
